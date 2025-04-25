@@ -1,0 +1,272 @@
+/* Byzantine Box Gallery - Styles based on jahunger.com menu page */
+
+:root {
+  --primary-bg: #043ba6; /* Deep blue background */
+  --secondary-bg: #ff7700; /* Bright orange background from menu page */
+  --tertiary-bg: #ff00cc; /* Pink accent color */
+  --text-color: #ffffff;
+  --text-color-secondary: rgba(255, 255, 255, 0.8);
+  --accent-color: #0047ff; /* Blue accent color from menu page */
+  --font-family: "Space Grotesk", sans-serif;
+}
+
+body {
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, .hero-title {
+  font-family: var(--font-family);
+  font-size: 120px;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+  line-height: 1.1;
+  text-align: center;
+}
+
+h2 {
+  font-family: var(--font-family);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+h3 {
+  font-family: var(--font-family);
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+p {
+  font-family: var(--font-family);
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--tertiary-bg);
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.content-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 0;
+  position: relative;
+}
+
+.section-blue {
+  background-color: var(--primary-bg);
+}
+
+.section-orange {
+  background-color: var(--secondary-bg);
+}
+
+.section-pink {
+  background-color: var(--tertiary-bg);
+}
+
+/* Hero section */
+.hero-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.hero-image {
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+/* Gallery grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  margin: 4rem 0;
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+.gallery-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.gallery-subtitle {
+  font-size: 24px;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.gallery-description {
+  font-size: 18px;
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+/* Navigation */
+header {
+  padding: 2rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(4, 59, 166, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nav-link:hover {
+  color: var(--secondary-bg);
+}
+
+/* Footer */
+.footer {
+  padding: 3rem 0;
+  text-align: center;
+  color: var(--text-color-secondary);
+  font-size: 0.9rem;
+  background-color: var(--primary-bg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  h1, .hero-title {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1, .hero-title {
+    font-size: 60px;
+  }
+  
+  h2 {
+    font-size: 36px;
+  }
+  
+  h3 {
+    font-size: 24px;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .gallery-title {
+    font-size: 28px;
+  }
+  
+  .gallery-subtitle {
+    font-size: 20px;
+  }
+}
+
+/* Animation for scroll effects */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  40% {
+    transform: translateY(-20px) translateX(-50%);
+  }
+  60% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+}
+
+/* Background color transition */
+.bg-transition {
+  transition: background-color 0.8s ease;
+}
